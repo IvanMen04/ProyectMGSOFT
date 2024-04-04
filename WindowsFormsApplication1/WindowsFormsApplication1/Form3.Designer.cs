@@ -36,13 +36,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet2 = new WindowsFormsApplication1.MGsoftDataSet2();
             this.txtnomCliente = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtTrabajo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lbArea = new System.Windows.Forms.ListBox();
+            this.trabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet = new WindowsFormsApplication1.MGsoftDataSet();
             this.lbEstadoTrabajo = new System.Windows.Forms.ListBox();
+            this.trabajoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet1 = new WindowsFormsApplication1.MGsoftDataSet1();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -50,19 +56,32 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.mGsoftDataSet = new WindowsFormsApplication1.MGsoftDataSet();
-            this.trabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajoTableAdapter = new WindowsFormsApplication1.MGsoftDataSetTableAdapters.TrabajoTableAdapter();
             this.trabajoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.mGsoftDataSet1 = new WindowsFormsApplication1.MGsoftDataSet1();
-            this.trabajoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.trabajoTableAdapter1 = new WindowsFormsApplication1.MGsoftDataSet1TableAdapters.TrabajoTableAdapter();
+            this.clientesTableAdapter = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.ClientesTableAdapter();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrabajoColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaTRABcolum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoTrabColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKidTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,11 +140,38 @@
             // 
             // dgClientes
             // 
+            this.dgClientes.AutoGenerateColumns = false;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCliente,
+            this.nomCliente,
+            this.Domicilio,
+            this.Telefono,
+            this.TrabajoColum,
+            this.AreaTRABcolum,
+            this.Fecha,
+            this.EstadoTrabColum,
+            this.idClienteDataGridViewTextBoxColumn,
+            this.nomClienteDataGridViewTextBoxColumn,
+            this.domicilioDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.fKidTrabajoDataGridViewTextBoxColumn});
+            this.dgClientes.DataSource = this.clientesBindingSource;
             this.dgClientes.Location = new System.Drawing.Point(319, 109);
             this.dgClientes.Name = "dgClientes";
-            this.dgClientes.Size = new System.Drawing.Size(749, 480);
+            this.dgClientes.Size = new System.Drawing.Size(842, 480);
             this.dgClientes.TabIndex = 7;
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.mGsoftDataSet2;
+            // 
+            // mGsoftDataSet2
+            // 
+            this.mGsoftDataSet2.DataSetName = "MGsoftDataSet2";
+            this.mGsoftDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtnomCliente
             // 
@@ -179,6 +225,16 @@
             this.lbArea.Size = new System.Drawing.Size(120, 17);
             this.lbArea.TabIndex = 17;
             // 
+            // trabajoBindingSource
+            // 
+            this.trabajoBindingSource.DataMember = "Trabajo";
+            this.trabajoBindingSource.DataSource = this.mGsoftDataSet;
+            // 
+            // mGsoftDataSet
+            // 
+            this.mGsoftDataSet.DataSetName = "MGsoftDataSet";
+            this.mGsoftDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lbEstadoTrabajo
             // 
             this.lbEstadoTrabajo.DataSource = this.trabajoBindingSource2;
@@ -189,11 +245,21 @@
             this.lbEstadoTrabajo.Size = new System.Drawing.Size(120, 17);
             this.lbEstadoTrabajo.TabIndex = 35;
             // 
+            // trabajoBindingSource2
+            // 
+            this.trabajoBindingSource2.DataMember = "Trabajo";
+            this.trabajoBindingSource2.DataSource = this.mGsoftDataSet1;
+            // 
+            // mGsoftDataSet1
+            // 
+            this.mGsoftDataSet1.DataSetName = "MGsoftDataSet1";
+            this.mGsoftDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(370, 83);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(357, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(453, 20);
             this.txtBuscar.TabIndex = 57;
             // 
             // label9
@@ -251,16 +317,6 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // mGsoftDataSet
-            // 
-            this.mGsoftDataSet.DataSetName = "MGsoftDataSet";
-            this.mGsoftDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // trabajoBindingSource
-            // 
-            this.trabajoBindingSource.DataMember = "Trabajo";
-            this.trabajoBindingSource.DataSource = this.mGsoftDataSet;
-            // 
             // trabajoTableAdapter
             // 
             this.trabajoTableAdapter.ClearBeforeFill = true;
@@ -270,25 +326,100 @@
             this.trabajoBindingSource1.DataMember = "Trabajo";
             this.trabajoBindingSource1.DataSource = this.mGsoftDataSet;
             // 
-            // mGsoftDataSet1
-            // 
-            this.mGsoftDataSet1.DataSetName = "MGsoftDataSet1";
-            this.mGsoftDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // trabajoBindingSource2
-            // 
-            this.trabajoBindingSource2.DataMember = "Trabajo";
-            this.trabajoBindingSource2.DataSource = this.mGsoftDataSet1;
-            // 
             // trabajoTableAdapter1
             // 
             this.trabajoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.DataPropertyName = "idCliente";
+            this.IdCliente.HeaderText = "IdCliente";
+            this.IdCliente.Name = "IdCliente";
+            // 
+            // nomCliente
+            // 
+            this.nomCliente.DataPropertyName = "nomCliente";
+            this.nomCliente.HeaderText = "NomCliente";
+            this.nomCliente.Name = "nomCliente";
+            // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.Name = "Domicilio";
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            // 
+            // TrabajoColum
+            // 
+            this.TrabajoColum.HeaderText = "Trabajo";
+            this.TrabajoColum.Name = "TrabajoColum";
+            // 
+            // AreaTRABcolum
+            // 
+            this.AreaTRABcolum.HeaderText = "Area de Trabajo";
+            this.AreaTRABcolum.Name = "AreaTRABcolum";
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // EstadoTrabColum
+            // 
+            this.EstadoTrabColum.HeaderText = "Estado del trabajo";
+            this.EstadoTrabColum.Name = "EstadoTrabColum";
+            // 
+            // idClienteDataGridViewTextBoxColumn
+            // 
+            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.HeaderText = "idCliente";
+            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
+            // 
+            // nomClienteDataGridViewTextBoxColumn
+            // 
+            this.nomClienteDataGridViewTextBoxColumn.DataPropertyName = "nomCliente";
+            this.nomClienteDataGridViewTextBoxColumn.HeaderText = "nomCliente";
+            this.nomClienteDataGridViewTextBoxColumn.Name = "nomClienteDataGridViewTextBoxColumn";
+            // 
+            // domicilioDataGridViewTextBoxColumn
+            // 
+            this.domicilioDataGridViewTextBoxColumn.DataPropertyName = "Domicilio";
+            this.domicilioDataGridViewTextBoxColumn.HeaderText = "Domicilio";
+            this.domicilioDataGridViewTextBoxColumn.Name = "domicilioDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            // 
+            // fKidTrabajoDataGridViewTextBoxColumn
+            // 
+            this.fKidTrabajoDataGridViewTextBoxColumn.DataPropertyName = "FKidTrabajo";
+            this.fKidTrabajoDataGridViewTextBoxColumn.HeaderText = "FKidTrabajo";
+            this.fKidTrabajoDataGridViewTextBoxColumn.Name = "fKidTrabajoDataGridViewTextBoxColumn";
             // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 668);
+            this.ClientSize = new System.Drawing.Size(1189, 664);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtidCliente);
@@ -314,11 +445,13 @@
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +487,22 @@
         private MGsoftDataSet1 mGsoftDataSet1;
         private System.Windows.Forms.BindingSource trabajoBindingSource2;
         private MGsoftDataSet1TableAdapters.TrabajoTableAdapter trabajoTableAdapter1;
+        private MGsoftDataSet2 mGsoftDataSet2;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
+        private MGsoftDataSet2TableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrabajoColum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AreaTRABcolum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoTrabColum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomClienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fKidTrabajoDataGridViewTextBoxColumn;
     }
 }

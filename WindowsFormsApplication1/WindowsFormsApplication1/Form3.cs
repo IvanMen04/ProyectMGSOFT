@@ -13,11 +13,18 @@ namespace WindowsFormsApplication1
 {
     public partial class FrmClientes : Form
     {
+        private string connectionString =("Data Source=localhost\\SQLEXPRESS;Initial Catalog=MGsoft;Integrated Security=True");
+        
         public FrmClientes()
         {
             InitializeComponent();
+
+            MostrarFechaActual();
+
         }
+       
         Cliente c = new Cliente();
+
         public void deshabilita()
         {
             // deshabilitando textboxs
@@ -68,6 +75,8 @@ namespace WindowsFormsApplication1
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'mGsoftDataSet2.Clientes' Puede moverla o quitarla según sea necesario.
+            this.clientesTableAdapter.Fill(this.mGsoftDataSet2.Clientes);
             // TODO: esta línea de código carga datos en la tabla 'mGsoftDataSet1.Trabajo' Puede moverla o quitarla según sea necesario.
             this.trabajoTableAdapter1.Fill(this.mGsoftDataSet1.Trabajo);
             // TODO: esta línea de código carga datos en la tabla 'mGsoftDataSet.Trabajo' Puede moverla o quitarla según sea necesario.
@@ -79,6 +88,31 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyChar == 27) this.Close();
             if (e.KeyChar == 13 && txtidCliente.Text != "") {
+
+                string idBusqueda = txtidCliente.Text.Trim();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT nomCliente, Domicilio, Telefono, Fecha FROM Clientes WHERE idCliente = @idCliente";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    command.Parameters.AddWithValue("@idCliente", idBusqueda);
+
+             
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            // Si se encontró el ID, llenar los campos
+                            txtnomCliente.Text = reader["nomCliente"].ToString();
+                            txtDomicilio.Text = reader["Domicilio"].ToString();
+                            txtTelefono.Text = reader["Telefono"].ToString();
+                            //lbArea.Text= reader["Areaaaaaaaaa"].ToString();
+                            //lbEstadoTrabajo.Text = reader["Esatdooooooo"].ToString();
+                            //txtTrabajo.Text = reader["Trabajo"].ToString();
+                            
+                        }
+                }
                 habilita();
                 txtnomCliente.Focus();
             }
@@ -134,20 +168,59 @@ namespace WindowsFormsApplication1
             if (e.KeyChar == 13) lbArea.Focus();
         }
 
+        private void CargarDatos()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Clientes values (IdCliente, nomCliente, Domicilio, Telefono, Fecha)"; // Tu consulta SQL para obtener los datos de MiTabla
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+                    connection.Close();
+
+                    dgClientes.DataSource = dataTable; // Asignar el DataTable al DataSource del DataGridView
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar datos: " + ex.Message);
+                }
+            }
+        }
+
+        private void MostrarFechaActual()
+        {
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             c.idCliente = int.Parse(txtidCliente.Text);
             c.nomCliente = txtnomCliente.Text;
             c.Domicilio = txtDomicilio.Text;
-            c.Telefono = txtDomicilio.Text;
-            if (c.Insertar() == true)
+            c.Telefono = txtTelefono.Text;
+            c.Fecha = DateTime.Parse(lblFecha.Text);
+
+            if (c.Guardar() == true)
             {
                 MessageBox.Show("Cliente Guardado con Éxito");
             }
             else
                 MessageBox.Show("Error al guardar el Cliente");
             deshabilita();
-            
+
+            if (c.Actualizar() == true)
+            {
+                MessageBox.Show("Cliente Editado con Éxito");
+            }
+            else
+                MessageBox.Show("Error al Editar el Cliente");
+            deshabilita();
         }
+
     }
 }

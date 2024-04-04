@@ -8,15 +8,36 @@ using System.Net;
 
 namespace WindowsFormsApplication1
 {
-    public class Cliente:Conexion
-    {
-        public int idCliente { get; set; }
-        public string nomCliente { get; set; }
-        public string Domicilio { get; set; }
-        public string Telefono { get; set; }
-        public DateTime Fecha { get; set; }
-        public int FKidTrabajo { get; set; }
+    class Cliente:cliente2
 
+    {
+     
+
+        private int idc;
+        private string nc; 
+        private string dmc;
+        private string tel; 
+        private DateTime fch;
+        //private int fkid; 
+
+
+        public class CD_Conexion
+        {
+            string localhost = Dns.GetHostName();
+            private SqlConnection Conexion = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=MGsoft;Integrated Security=True");
+            public SqlConnection AbrirConexion()
+            {
+                if (Conexion.State == ConnectionState.Closed)
+                    Conexion.Open();
+                return Conexion;
+            }
+            public SqlConnection CerrarConexion()
+            {
+                if (Conexion.State == ConnectionState.Open)
+                    Conexion.Close();
+                return Conexion;
+            }
+        }
 
         private CD_Conexion conexion = new CD_Conexion();
         SqlDataReader leer;
@@ -34,8 +55,9 @@ namespace WindowsFormsApplication1
             return tabla;
 
         }
+       
 
-        public void Insertar(int idCliente, string nomCliente, string Domicilio, string Telefono, DateTime Fecha, string FKidTrabajo, string Trabajo, string AreaTrabajo, string EstadoTrabajo)
+        /*public void insertar(int idCliente, string nomCliente, string Domicilio, string Telefono, DateTime Fecha, string FKidTrabajo, string Trabajo, string AreaTrabajo, string EstadoTrabajo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsetarProductos";
@@ -59,6 +81,106 @@ namespace WindowsFormsApplication1
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
+        }*/
+        
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=MGsoft;Integrated Security=True";
+
+       
+        public override int idCliente { get { return this.idc; } set { this.idc = value; } }
+        public override string nomCliente { get { return this.nc; } set { this.nc = value; } }
+        public override string Domicilio { get { return this.dmc; } set { this.dmc = value; } }
+        public override string Telefono { get { return this.tel; } set { this.tel = value; } }
+        public  override DateTime Fecha { get { return this.fch; } set { this.fch = value; } }
+       // public override int FKidTrabajo { get { return this.fkid; } set { this.fkid = value; } }
+
+        public override bool Guardar()
+        {
+            // Usar 'using' para asegurar que la conexión se cierre correctamente
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Crear un nuevo comando y asignar la conexión
+                using (SqlCommand comando = connection.CreateCommand())
+                {
+                    try
+                    {
+                        // Abre la conexión
+                        connection.Open();
+
+                        // Configurar el comando como un stored procedure
+                        comando.CommandText = "InsetarProductos";
+                        comando.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetros para el stored procedure
+                        comando.Parameters.AddWithValue("@idc", this.idc);
+                        comando.Parameters.AddWithValue("@nc", this.nc);
+                        comando.Parameters.AddWithValue("@dmc", this.dmc);
+                        comando.Parameters.AddWithValue("@tel", this.tel);
+                        comando.Parameters.AddWithValue("@fch", this.fch);
+
+                        // Ejecutar el comando y obtener el número de filas afectadas
+                        int resultado = comando.ExecuteNonQuery();
+
+                        // Si se insertó al menos una fila, devolver verdadero
+                        if (resultado > 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Manejar cualquier excepción de SQL
+                        Console.WriteLine("Error SQL: " + ex.Message);
+                        return false;
+                    }
+                    finally
+                    {
+                        // Limpiar parámetros y cerrar la conexión
+                        comando.Parameters.Clear();
+                        connection.Close();
+                    }
+                }
+            }
+        }
+        public override bool Actualizar()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comando = connection.CreateCommand())
+                {
+                    try
+                    {
+                     
+                        connection.Open();
+
+                        // Configurar el comando como un UPDATE en lugar de INSERT
+                        comando.CommandText = "UPDATE Clientes SET nomCliente = @nc, Domicilio = @dmc, Telefono = @tel, Fecha=@fch WHERE idCliente = @idc";
+                        comando.Parameters.AddWithValue("@idc", this.idc);
+                        comando.Parameters.AddWithValue("@nc", this.nc);
+                        comando.Parameters.AddWithValue("@dmc", this.dmc);
+                        comando.Parameters.AddWithValue("@tel", this.tel);
+                        comando.Parameters.AddWithValue("@fch", this.fch);
+
+                        // Ejecutar el comando y obtener el número de filas afectadas
+                        int resultado = comando.ExecuteNonQuery();
+
+                        // Si se actualizó al menos una fila, devolver verdadero
+                        if (resultado > 0)
+                            return true;
+                        else
+                            return false;
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error SQL: " + ex.Message);
+                        return false;
+                    }
+                    finally
+                    {
+                        comando.Parameters.Clear();
+                        connection.Close();
+                    }
+                }
+            }
         }
     }
 }

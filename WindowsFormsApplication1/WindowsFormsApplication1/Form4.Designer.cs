@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbArea = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -35,19 +36,32 @@
             this.txtDomicilioEmp = new System.Windows.Forms.TextBox();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.dgEmpleado = new System.Windows.Forms.DataGridView();
+            this.idEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet2 = new WindowsFormsApplication1.MGsoftDataSet2();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbEstadoEmpleado = new System.Windows.Forms.ListBox();
+            this.empleadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.txtnomEmpleado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtidEmpleado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.empleadoTableAdapter = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.EmpleadoTableAdapter();
+            this.txtEstadoEmpleado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbArea
@@ -100,11 +114,66 @@
             // 
             // dgEmpleado
             // 
+            this.dgEmpleado.AutoGenerateColumns = false;
             this.dgEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEmpleadoDataGridViewTextBoxColumn,
+            this.nomEmpleadoDataGridViewTextBoxColumn,
+            this.domicilioDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.correoDataGridViewTextBoxColumn,
+            this.estadoEmpleadoDataGridViewTextBoxColumn});
+            this.dgEmpleado.DataSource = this.empleadoBindingSource;
             this.dgEmpleado.Location = new System.Drawing.Point(254, 82);
             this.dgEmpleado.Name = "dgEmpleado";
-            this.dgEmpleado.Size = new System.Drawing.Size(651, 432);
+            this.dgEmpleado.Size = new System.Drawing.Size(644, 432);
             this.dgEmpleado.TabIndex = 25;
+            // 
+            // idEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.idEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "idEmpleado";
+            this.idEmpleadoDataGridViewTextBoxColumn.HeaderText = "idEmpleado";
+            this.idEmpleadoDataGridViewTextBoxColumn.Name = "idEmpleadoDataGridViewTextBoxColumn";
+            // 
+            // nomEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.nomEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "nomEmpleado";
+            this.nomEmpleadoDataGridViewTextBoxColumn.HeaderText = "nomEmpleado";
+            this.nomEmpleadoDataGridViewTextBoxColumn.Name = "nomEmpleadoDataGridViewTextBoxColumn";
+            // 
+            // domicilioDataGridViewTextBoxColumn
+            // 
+            this.domicilioDataGridViewTextBoxColumn.DataPropertyName = "Domicilio";
+            this.domicilioDataGridViewTextBoxColumn.HeaderText = "Domicilio";
+            this.domicilioDataGridViewTextBoxColumn.Name = "domicilioDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // correoDataGridViewTextBoxColumn
+            // 
+            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
+            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            // 
+            // estadoEmpleadoDataGridViewTextBoxColumn
+            // 
+            this.estadoEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "EstadoEmpleado";
+            this.estadoEmpleadoDataGridViewTextBoxColumn.HeaderText = "EstadoEmpleado";
+            this.estadoEmpleadoDataGridViewTextBoxColumn.Name = "estadoEmpleadoDataGridViewTextBoxColumn";
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataMember = "Empleado";
+            this.empleadoBindingSource.DataSource = this.mGsoftDataSet2;
+            // 
+            // mGsoftDataSet2
+            // 
+            this.mGsoftDataSet2.DataSetName = "MGsoftDataSet2";
+            this.mGsoftDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
@@ -151,13 +220,10 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Buscar";
             // 
-            // lbEstadoEmpleado
+            // empleadoBindingSource1
             // 
-            this.lbEstadoEmpleado.FormattingEnabled = true;
-            this.lbEstadoEmpleado.Location = new System.Drawing.Point(34, 435);
-            this.lbEstadoEmpleado.Name = "lbEstadoEmpleado";
-            this.lbEstadoEmpleado.Size = new System.Drawing.Size(120, 17);
-            this.lbEstadoEmpleado.TabIndex = 35;
+            this.empleadoBindingSource1.DataMember = "Empleado";
+            this.empleadoBindingSource1.DataSource = this.mGsoftDataSet2;
             // 
             // txtnomEmpleado
             // 
@@ -201,6 +267,7 @@
             this.btnActualizar.TabIndex = 71;
             this.btnActualizar.Text = "ACTUALIZAR Y GUARDAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnRegresar
             // 
@@ -212,18 +279,30 @@
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
+            // empleadoTableAdapter
+            // 
+            this.empleadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtEstadoEmpleado
+            // 
+            this.txtEstadoEmpleado.Location = new System.Drawing.Point(35, 426);
+            this.txtEstadoEmpleado.Name = "txtEstadoEmpleado";
+            this.txtEstadoEmpleado.Size = new System.Drawing.Size(166, 20);
+            this.txtEstadoEmpleado.TabIndex = 72;
+            this.txtEstadoEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstadoEmpleado_KeyPress);
+            // 
             // FrmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 588);
+            this.Controls.Add(this.txtEstadoEmpleado);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtidEmpleado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtnomEmpleado);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lbEstadoEmpleado);
             this.Controls.Add(this.lbArea);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCorreo);
@@ -240,6 +319,9 @@
             this.Text = "Empleados";
             this.Load += new System.EventHandler(this.FrmEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,12 +341,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbEstadoEmpleado;
         private System.Windows.Forms.TextBox txtnomEmpleado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtidEmpleado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnRegresar;
+        private MGsoftDataSet2 mGsoftDataSet2;
+        private System.Windows.Forms.BindingSource empleadoBindingSource;
+        private MGsoftDataSet2TableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource empleadoBindingSource1;
+        private System.Windows.Forms.TextBox txtEstadoEmpleado;
     }
 }

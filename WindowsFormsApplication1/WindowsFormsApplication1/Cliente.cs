@@ -11,15 +11,18 @@ namespace WindowsFormsApplication1
     class Cliente:cliente2
 
     {
-     
-
         private int idc;
         private string nc; 
         private string dmc;
         private string tel; 
         private DateTime fch;
-        //private int fkid; 
-
+        
+        /*private int fkid;
+        private string trab;
+        private string ArTrab;
+        private string EsTr;
+        private int idTr;
+        private DateTime fch2;*/
 
         public class CD_Conexion
         {
@@ -91,7 +94,15 @@ namespace WindowsFormsApplication1
         public override string Domicilio { get { return this.dmc; } set { this.dmc = value; } }
         public override string Telefono { get { return this.tel; } set { this.tel = value; } }
         public  override DateTime Fecha { get { return this.fch; } set { this.fch = value; } }
-       // public override int FKidTrabajo { get { return this.fkid; } set { this.fkid = value; } }
+        
+        /*public override int FKidTrabajo { get { return this.fkid; } set { this.fkid = value; } }
+
+
+        public override string Trabajo { get { return this.trab; } set { this.trab = value; } }
+        public override string AreaTrabajo { get { return this.ArTrab; } set { this.ArTrab = value; } }
+        public override string EstadoTrabajo { get { return this.EsTr; } set { this.EsTr = value; } }
+        public override DateTime Fecha2 { get { return this.fch2; } set { this.fch2 = value; } }
+        public override int idTrabajo { get { return this.idTr; } set { this.idTr = value; } }*/
 
         public override bool Guardar()
         {
@@ -116,6 +127,14 @@ namespace WindowsFormsApplication1
                         comando.Parameters.AddWithValue("@dmc", this.dmc);
                         comando.Parameters.AddWithValue("@tel", this.tel);
                         comando.Parameters.AddWithValue("@fch", this.fch);
+                        //comando.Parameters.AddWithValue("@fkid", this.fkid);
+
+                        //comando.Parameters.AddWithValue("@fch2", this.fch2);
+                        //comando.Parameters.AddWithValue("@trab", this.trab);
+                        //comando.Parameters.AddWithValue("@ArTrab", this.ArTrab);
+                        //comando.Parameters.AddWithValue("@EsTr", this.EsTr);
+                       // comando.Parameters.AddWithValue("@idTr", this.idTr);
+
 
                         // Ejecutar el comando y obtener el número de filas afectadas
                         int resultado = comando.ExecuteNonQuery();
@@ -141,6 +160,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
         public override bool Actualizar()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -149,7 +169,7 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                     
+
                         connection.Open();
 
                         // Configurar el comando como un UPDATE en lugar de INSERT
@@ -180,6 +200,27 @@ namespace WindowsFormsApplication1
                         connection.Close();
                     }
                 }
+            }
+        }
+
+        public override DataTable reporte()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                DataTable dt = new DataTable();
+
+                using (SqlCommand comando = new SqlCommand())
+                {
+                    comando.Connection = connection;
+                    comando.CommandText = "SELECT Clientes.idCliente, Clientes.NomCliente, Clientes.Domicilio, Clientes.Telefono, Clientes.Fecha FROM Clientes";
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(comando))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+
+                return dt;
             }
         }
     }

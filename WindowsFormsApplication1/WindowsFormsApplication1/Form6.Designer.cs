@@ -155,8 +155,9 @@
             this.txtTrab.Location = new System.Drawing.Point(34, 51);
             this.txtTrab.Multiline = true;
             this.txtTrab.Name = "txtTrab";
-            this.txtTrab.Size = new System.Drawing.Size(402, 53);
+            this.txtTrab.Size = new System.Drawing.Size(398, 61);
             this.txtTrab.TabIndex = 69;
+            this.txtTrab.TextChanged += new System.EventHandler(this.txtTrab_TextChanged);
             this.txtTrab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTrab_KeyPress);
             // 
             // FrmBitacora

@@ -88,6 +88,11 @@ namespace WindowsFormsApplication1
             if (e.KeyChar == 13) dgIncidencia.Focus();
         }
 
+        private void txtTrab_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
    
       
        

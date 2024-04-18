@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbEstadoTrabajo = new System.Windows.Forms.ListBox();
-            this.lbAreaTrabajo = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTrabajo = new System.Windows.Forms.TextBox();
             this.dgtrabajo = new System.Windows.Forms.DataGridView();
@@ -37,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbEmpleado = new System.Windows.Forms.ListBox();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -45,24 +43,30 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.cbCliente = new System.Windows.Forms.Label();
+            this.cbEstadoTrabajo = new System.Windows.Forms.ComboBox();
+            this.cbEmpleado = new System.Windows.Forms.ComboBox();
+            this.cbxCliente = new System.Windows.Forms.ComboBox();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet2 = new WindowsFormsApplication1.MGsoftDataSet2();
+            this.cbAreaTrabajo = new System.Windows.Forms.ComboBox();
+            this.empleadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadoTableAdapter = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.EmpleadoTableAdapter();
+            this.clientesTableAdapter = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.ClientesTableAdapter();
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKTrabajoIDEmpleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trabajoEmpleadoTableAdapter = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.TrabajoEmpleadoTableAdapter();
+            this.empleadoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgtrabajo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTrabajoIDEmpleadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbEstadoTrabajo
-            // 
-            this.lbEstadoTrabajo.FormattingEnabled = true;
-            this.lbEstadoTrabajo.Location = new System.Drawing.Point(25, 354);
-            this.lbEstadoTrabajo.Name = "lbEstadoTrabajo";
-            this.lbEstadoTrabajo.Size = new System.Drawing.Size(120, 17);
-            this.lbEstadoTrabajo.TabIndex = 52;
-            // 
-            // lbAreaTrabajo
-            // 
-            this.lbAreaTrabajo.FormattingEnabled = true;
-            this.lbAreaTrabajo.Location = new System.Drawing.Point(25, 244);
-            this.lbAreaTrabajo.Name = "lbAreaTrabajo";
-            this.lbAreaTrabajo.Size = new System.Drawing.Size(120, 17);
-            this.lbAreaTrabajo.TabIndex = 51;
             // 
             // label8
             // 
@@ -126,14 +130,6 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Asignar trabajo a";
             // 
-            // lbEmpleado
-            // 
-            this.lbEmpleado.FormattingEnabled = true;
-            this.lbEmpleado.Location = new System.Drawing.Point(22, 413);
-            this.lbEmpleado.Name = "lbEmpleado";
-            this.lbEmpleado.Size = new System.Drawing.Size(120, 17);
-            this.lbEmpleado.TabIndex = 53;
-            // 
             // txtbuscar
             // 
             this.txtbuscar.Location = new System.Drawing.Point(346, 50);
@@ -194,12 +190,123 @@
             this.btnActualizar.TabIndex = 69;
             this.btnActualizar.Text = "ACTUALIZAR Y GUARDAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.AutoSize = true;
+            this.cbCliente.Location = new System.Drawing.Point(19, 449);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(108, 13);
+            this.cbCliente.TabIndex = 70;
+            this.cbCliente.Text = "Trabajo solicitado por";
+            // 
+            // cbEstadoTrabajo
+            // 
+            this.cbEstadoTrabajo.FormattingEnabled = true;
+            this.cbEstadoTrabajo.Items.AddRange(new object[] {
+            "En proceso",
+            "Retrasado",
+            "Cancelado",
+            "Finalizado",
+            "Finalizado con retraso"});
+            this.cbEstadoTrabajo.Location = new System.Drawing.Point(25, 351);
+            this.cbEstadoTrabajo.Name = "cbEstadoTrabajo";
+            this.cbEstadoTrabajo.Size = new System.Drawing.Size(121, 21);
+            this.cbEstadoTrabajo.TabIndex = 72;
+            // 
+            // cbEmpleado
+            // 
+            this.cbEmpleado.DataSource = this.empleadoBindingSource2;
+            this.cbEmpleado.DisplayMember = "nomEmpleado";
+            this.cbEmpleado.FormattingEnabled = true;
+            this.cbEmpleado.Location = new System.Drawing.Point(25, 413);
+            this.cbEmpleado.Name = "cbEmpleado";
+            this.cbEmpleado.Size = new System.Drawing.Size(121, 21);
+            this.cbEmpleado.TabIndex = 73;
+            this.cbEmpleado.ValueMember = "nomEmpleado";
+            // 
+            // cbxCliente
+            // 
+            this.cbxCliente.DataSource = this.clientesBindingSource;
+            this.cbxCliente.DisplayMember = "nomCliente";
+            this.cbxCliente.FormattingEnabled = true;
+            this.cbxCliente.Location = new System.Drawing.Point(25, 465);
+            this.cbxCliente.Name = "cbxCliente";
+            this.cbxCliente.Size = new System.Drawing.Size(121, 21);
+            this.cbxCliente.TabIndex = 74;
+            this.cbxCliente.ValueMember = "nomCliente";
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.mGsoftDataSet2;
+            // 
+            // mGsoftDataSet2
+            // 
+            this.mGsoftDataSet2.DataSetName = "MGsoftDataSet2";
+            this.mGsoftDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cbAreaTrabajo
+            // 
+            this.cbAreaTrabajo.FormattingEnabled = true;
+            this.cbAreaTrabajo.Items.AddRange(new object[] {
+            "Tecnica",
+            "Programacion",
+            "Programacion Web",
+            "Servidores"});
+            this.cbAreaTrabajo.Location = new System.Drawing.Point(25, 244);
+            this.cbAreaTrabajo.Name = "cbAreaTrabajo";
+            this.cbAreaTrabajo.Size = new System.Drawing.Size(121, 21);
+            this.cbAreaTrabajo.TabIndex = 75;
+            // 
+            // empleadoBindingSource1
+            // 
+            this.empleadoBindingSource1.DataMember = "Empleado";
+            this.empleadoBindingSource1.DataSource = this.mGsoftDataSet2;
+            // 
+            // empleadoBindingSource
+            // 
+            this.empleadoBindingSource.DataMember = "Empleado";
+            this.empleadoBindingSource.DataSource = this.mGsoftDataSet2;
+            // 
+            // empleadoTableAdapter
+            // 
+            this.empleadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.mGsoftDataSet2;
+            // 
+            // fKTrabajoIDEmpleadoBindingSource
+            // 
+            this.fKTrabajoIDEmpleadoBindingSource.DataMember = "FK_TrabajoIDEmpleado";
+            this.fKTrabajoIDEmpleadoBindingSource.DataSource = this.empleadoBindingSource1;
+            // 
+            // trabajoEmpleadoTableAdapter
+            // 
+            this.trabajoEmpleadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // empleadoBindingSource2
+            // 
+            this.empleadoBindingSource2.DataMember = "Empleado";
+            this.empleadoBindingSource2.DataSource = this.mGsoftDataSet2;
             // 
             // FrmTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 541);
+            this.Controls.Add(this.cbAreaTrabajo);
+            this.Controls.Add(this.cbxCliente);
+            this.Controls.Add(this.cbEmpleado);
+            this.Controls.Add(this.cbEstadoTrabajo);
+            this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtidTrabajo);
@@ -207,20 +314,24 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbEmpleado);
-            this.Controls.Add(this.lbEstadoTrabajo);
-            this.Controls.Add(this.lbAreaTrabajo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTrabajo);
-            this.Controls.Add(this.dgtrabajo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgtrabajo);
             this.Name = "FrmTrabajo";
             this.Text = "Trabajos";
             this.Load += new System.EventHandler(this.FrmTrabajo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgtrabajo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTrabajoIDEmpleadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,8 +339,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbEstadoTrabajo;
-        private System.Windows.Forms.ListBox lbAreaTrabajo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTrabajo;
         private System.Windows.Forms.DataGridView dgtrabajo;
@@ -237,7 +346,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lbEmpleado;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFecha;
@@ -245,5 +353,20 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label cbCliente;
+        private MGsoftDataSet2 mGsoftDataSet2;
+        private System.Windows.Forms.BindingSource empleadoBindingSource;
+        private MGsoftDataSet2TableAdapters.EmpleadoTableAdapter empleadoTableAdapter;
+        private System.Windows.Forms.BindingSource empleadoBindingSource1;
+        private System.Windows.Forms.ComboBox cbEstadoTrabajo;
+        private System.Windows.Forms.ComboBox cbEmpleado;
+        private System.Windows.Forms.ComboBox cbxCliente;
+        private System.Windows.Forms.ComboBox cbAreaTrabajo;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
+        private MGsoftDataSet2TableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private System.Windows.Forms.BindingSource fKTrabajoIDEmpleadoBindingSource;
+        private MGsoftDataSet2TableAdapters.TrabajoEmpleadoTableAdapter trabajoEmpleadoTableAdapter;
+        private System.Windows.Forms.BindingSource empleadoBindingSource2;
     }
 }

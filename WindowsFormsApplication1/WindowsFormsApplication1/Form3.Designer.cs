@@ -32,23 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mGsoftDataSet2 = new WindowsFormsApplication1.MGsoftDataSet2();
             this.txtnomCliente = new System.Windows.Forms.TextBox();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtTrabajo = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbArea = new System.Windows.Forms.ListBox();
-            this.trabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mGsoftDataSet = new WindowsFormsApplication1.MGsoftDataSet();
-            this.lbEstadoTrabajo = new System.Windows.Forms.ListBox();
-            this.trabajoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.mGsoftDataSet1 = new WindowsFormsApplication1.MGsoftDataSet1();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -56,32 +46,42 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.trabajoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKClientesTrabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet = new WindowsFormsApplication1.MGsoftDataSet();
+            this.trabajoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet1 = new WindowsFormsApplication1.MGsoftDataSet1();
             this.trabajoTableAdapter = new WindowsFormsApplication1.MGsoftDataSetTableAdapters.TrabajoTableAdapter();
             this.trabajoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.trabajoTableAdapter1 = new WindowsFormsApplication1.MGsoftDataSet1TableAdapters.TrabajoTableAdapter();
             this.clientesTableAdapter = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.ClientesTableAdapter();
-            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrabajoColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AreaTRABcolum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoTrabColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fKidTrabajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabajoTableAdapter2 = new WindowsFormsApplication1.MGsoftDataSet2TableAdapters.TrabajoTableAdapter();
+            this.mGsoftDataSet3 = new WindowsFormsApplication1.MGsoftDataSet3();
+            this.mGsoftDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mGsoftDataSet4 = new WindowsFormsApplication1.MGsoftDataSet4();
+            this.mGsoftDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientesTableAdapter1 = new WindowsFormsApplication1.MGsoftDataSet3TableAdapters.ClientesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKClientesTrabajoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,62 +111,24 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Telefono";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 304);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Trabajo";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 443);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Fecha estimada de entrega";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 499);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Estado del trabajo";
-            // 
             // dgClientes
             // 
-            this.dgClientes.AutoGenerateColumns = false;
+            this.dgClientes.AllowUserToOrderColumns = true;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdCliente,
-            this.nomCliente,
-            this.Domicilio,
-            this.Telefono,
-            this.TrabajoColum,
-            this.AreaTRABcolum,
-            this.Fecha,
-            this.EstadoTrabColum,
-            this.idClienteDataGridViewTextBoxColumn,
-            this.nomClienteDataGridViewTextBoxColumn,
-            this.domicilioDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
-            this.fKidTrabajoDataGridViewTextBoxColumn});
-            this.dgClientes.DataSource = this.clientesBindingSource;
-            this.dgClientes.Location = new System.Drawing.Point(319, 109);
+            this.dgClientes.Location = new System.Drawing.Point(247, 109);
             this.dgClientes.Name = "dgClientes";
-            this.dgClientes.Size = new System.Drawing.Size(842, 480);
+            this.dgClientes.Size = new System.Drawing.Size(720, 424);
             this.dgClientes.TabIndex = 7;
             // 
-            // clientesBindingSource
+            // clientesBindingSource1
             // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.mGsoftDataSet2;
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.mGsoftDataSet2BindingSource;
+            // 
+            // mGsoftDataSet2BindingSource
+            // 
+            this.mGsoftDataSet2BindingSource.DataSource = this.mGsoftDataSet2;
+            this.mGsoftDataSet2BindingSource.Position = 0;
             // 
             // mGsoftDataSet2
             // 
@@ -197,64 +159,6 @@
             this.txtTelefono.TabIndex = 10;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
-            // txtTrabajo
-            // 
-            this.txtTrabajo.Location = new System.Drawing.Point(41, 320);
-            this.txtTrabajo.Multiline = true;
-            this.txtTrabajo.Name = "txtTrabajo";
-            this.txtTrabajo.Size = new System.Drawing.Size(243, 64);
-            this.txtTrabajo.TabIndex = 12;
-            this.txtTrabajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTrabajo_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 401);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Area de trabajo";
-            // 
-            // lbArea
-            // 
-            this.lbArea.DataSource = this.trabajoBindingSource;
-            this.lbArea.DisplayMember = "AreaTrabajo";
-            this.lbArea.FormattingEnabled = true;
-            this.lbArea.Location = new System.Drawing.Point(44, 417);
-            this.lbArea.Name = "lbArea";
-            this.lbArea.Size = new System.Drawing.Size(120, 17);
-            this.lbArea.TabIndex = 17;
-            // 
-            // trabajoBindingSource
-            // 
-            this.trabajoBindingSource.DataMember = "Trabajo";
-            this.trabajoBindingSource.DataSource = this.mGsoftDataSet;
-            // 
-            // mGsoftDataSet
-            // 
-            this.mGsoftDataSet.DataSetName = "MGsoftDataSet";
-            this.mGsoftDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lbEstadoTrabajo
-            // 
-            this.lbEstadoTrabajo.DataSource = this.trabajoBindingSource2;
-            this.lbEstadoTrabajo.DisplayMember = "EstadoTrabajo";
-            this.lbEstadoTrabajo.FormattingEnabled = true;
-            this.lbEstadoTrabajo.Location = new System.Drawing.Point(41, 518);
-            this.lbEstadoTrabajo.Name = "lbEstadoTrabajo";
-            this.lbEstadoTrabajo.Size = new System.Drawing.Size(120, 17);
-            this.lbEstadoTrabajo.TabIndex = 35;
-            // 
-            // trabajoBindingSource2
-            // 
-            this.trabajoBindingSource2.DataMember = "Trabajo";
-            this.trabajoBindingSource2.DataSource = this.mGsoftDataSet1;
-            // 
-            // mGsoftDataSet1
-            // 
-            this.mGsoftDataSet1.DataSetName = "MGsoftDataSet1";
-            this.mGsoftDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(370, 83);
@@ -274,7 +178,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(40, 468);
+            this.lblFecha.Location = new System.Drawing.Point(38, 305);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(37, 13);
             this.lblFecha.TabIndex = 58;
@@ -299,7 +203,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(470, 595);
+            this.btnActualizar.Location = new System.Drawing.Point(27, 347);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(203, 55);
             this.btnActualizar.TabIndex = 71;
@@ -309,13 +213,57 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(703, 595);
+            this.btnRegresar.Location = new System.Drawing.Point(800, 22);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(203, 55);
+            this.btnRegresar.Size = new System.Drawing.Size(167, 44);
             this.btnRegresar.TabIndex = 70;
             this.btnRegresar.Text = "REGRESAR";
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // trabajoBindingSource3
+            // 
+            this.trabajoBindingSource3.DataMember = "Trabajo";
+            this.trabajoBindingSource3.DataSource = this.mGsoftDataSet2BindingSource;
+            // 
+            // fKClientesTrabajoBindingSource
+            // 
+            this.fKClientesTrabajoBindingSource.DataMember = "FK_Clientes_Trabajo";
+            this.fKClientesTrabajoBindingSource.DataSource = this.trabajoBindingSource3;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(88, 408);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(62, 44);
+            this.btnEliminar.TabIndex = 74;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.mGsoftDataSet2;
+            // 
+            // trabajoBindingSource
+            // 
+            this.trabajoBindingSource.DataMember = "Trabajo";
+            this.trabajoBindingSource.DataSource = this.mGsoftDataSet;
+            // 
+            // mGsoftDataSet
+            // 
+            this.mGsoftDataSet.DataSetName = "MGsoftDataSet";
+            this.mGsoftDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // trabajoBindingSource2
+            // 
+            this.trabajoBindingSource2.DataMember = "Trabajo";
+            this.trabajoBindingSource2.DataSource = this.mGsoftDataSet1;
+            // 
+            // mGsoftDataSet1
+            // 
+            this.mGsoftDataSet1.DataSetName = "MGsoftDataSet1";
+            this.mGsoftDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // trabajoTableAdapter
             // 
@@ -334,92 +282,46 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
-            // IdCliente
+            // trabajoTableAdapter2
             // 
-            this.IdCliente.DataPropertyName = "idCliente";
-            this.IdCliente.HeaderText = "IdCliente";
-            this.IdCliente.Name = "IdCliente";
+            this.trabajoTableAdapter2.ClearBeforeFill = true;
             // 
-            // nomCliente
+            // mGsoftDataSet3
             // 
-            this.nomCliente.DataPropertyName = "nomCliente";
-            this.nomCliente.HeaderText = "NomCliente";
-            this.nomCliente.Name = "nomCliente";
+            this.mGsoftDataSet3.DataSetName = "MGsoftDataSet3";
+            this.mGsoftDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Domicilio
+            // mGsoftDataSet3BindingSource
             // 
-            this.Domicilio.DataPropertyName = "Domicilio";
-            this.Domicilio.HeaderText = "Domicilio";
-            this.Domicilio.Name = "Domicilio";
+            this.mGsoftDataSet3BindingSource.DataSource = this.mGsoftDataSet3;
+            this.mGsoftDataSet3BindingSource.Position = 0;
             // 
-            // Telefono
+            // mGsoftDataSet4
             // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
+            this.mGsoftDataSet4.DataSetName = "MGsoftDataSet4";
+            this.mGsoftDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // TrabajoColum
+            // mGsoftDataSet4BindingSource
             // 
-            this.TrabajoColum.HeaderText = "Trabajo";
-            this.TrabajoColum.Name = "TrabajoColum";
+            this.mGsoftDataSet4BindingSource.DataSource = this.mGsoftDataSet4;
+            this.mGsoftDataSet4BindingSource.Position = 0;
             // 
-            // AreaTRABcolum
+            // clientesBindingSource2
             // 
-            this.AreaTRABcolum.HeaderText = "Area de Trabajo";
-            this.AreaTRABcolum.Name = "AreaTRABcolum";
+            this.clientesBindingSource2.DataMember = "Clientes";
+            this.clientesBindingSource2.DataSource = this.mGsoftDataSet3;
             // 
-            // Fecha
+            // clientesTableAdapter1
             // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // EstadoTrabColum
-            // 
-            this.EstadoTrabColum.HeaderText = "Estado del trabajo";
-            this.EstadoTrabColum.Name = "EstadoTrabColum";
-            // 
-            // idClienteDataGridViewTextBoxColumn
-            // 
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
-            // 
-            // nomClienteDataGridViewTextBoxColumn
-            // 
-            this.nomClienteDataGridViewTextBoxColumn.DataPropertyName = "nomCliente";
-            this.nomClienteDataGridViewTextBoxColumn.HeaderText = "nomCliente";
-            this.nomClienteDataGridViewTextBoxColumn.Name = "nomClienteDataGridViewTextBoxColumn";
-            // 
-            // domicilioDataGridViewTextBoxColumn
-            // 
-            this.domicilioDataGridViewTextBoxColumn.DataPropertyName = "Domicilio";
-            this.domicilioDataGridViewTextBoxColumn.HeaderText = "Domicilio";
-            this.domicilioDataGridViewTextBoxColumn.Name = "domicilioDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // fKidTrabajoDataGridViewTextBoxColumn
-            // 
-            this.fKidTrabajoDataGridViewTextBoxColumn.DataPropertyName = "FKidTrabajo";
-            this.fKidTrabajoDataGridViewTextBoxColumn.HeaderText = "FKidTrabajo";
-            this.fKidTrabajoDataGridViewTextBoxColumn.Name = "fKidTrabajoDataGridViewTextBoxColumn";
+            this.clientesTableAdapter1.ClearBeforeFill = true;
             // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 664);
+            this.ClientSize = new System.Drawing.Size(1000, 566);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtidCliente);
@@ -427,17 +329,9 @@
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.lbEstadoTrabajo);
-            this.Controls.Add(this.lbArea);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTrabajo);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDomicilio);
             this.Controls.Add(this.txtnomCliente);
-            this.Controls.Add(this.dgClientes);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -445,13 +339,22 @@
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKClientesTrabajoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mGsoftDataSet4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,17 +365,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgClientes;
         private System.Windows.Forms.TextBox txtnomCliente;
         private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtTrabajo;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox lbArea;
-        private System.Windows.Forms.ListBox lbEstadoTrabajo;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblFecha;
@@ -490,19 +386,17 @@
         private MGsoftDataSet2 mGsoftDataSet2;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private MGsoftDataSet2TableAdapters.ClientesTableAdapter clientesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TrabajoColum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AreaTRABcolum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoTrabColum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fKidTrabajoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource mGsoftDataSet2BindingSource;
+        private System.Windows.Forms.BindingSource trabajoBindingSource3;
+        private MGsoftDataSet2TableAdapters.TrabajoTableAdapter trabajoTableAdapter2;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private MGsoftDataSet3 mGsoftDataSet3;
+        private System.Windows.Forms.BindingSource mGsoftDataSet3BindingSource;
+        private MGsoftDataSet4 mGsoftDataSet4;
+        private System.Windows.Forms.BindingSource mGsoftDataSet4BindingSource;
+        private System.Windows.Forms.BindingSource fKClientesTrabajoBindingSource;
+        private System.Windows.Forms.BindingSource clientesBindingSource2;
+        private MGsoftDataSet3TableAdapters.ClientesTableAdapter clientesTableAdapter1;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -44,6 +44,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsFormsApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <ExecutableExtension>.exe</ExecutableExtension>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
@@ -102,6 +105,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MGsoftDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MGsoftDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MGsoftDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MGsoftDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MGsoftDataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,6 +180,28 @@
     </None>
     <None Include="MGsoftDataSet2.xss">
       <DependentUpon>MGsoftDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MGsoftDataSet3.xsc">
+      <DependentUpon>MGsoftDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MGsoftDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MGsoftDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MGsoftDataSet3.xss">
+      <DependentUpon>MGsoftDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MGsoftDataSet4.xsc">
+      <DependentUpon>MGsoftDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MGsoftDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MGsoftDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MGsoftDataSet4.xss">
+      <DependentUpon>MGsoftDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
